@@ -1,6 +1,7 @@
 // credit https://github.com/kentcdodds/react-hooks/blob/4b2a9a54875a081cf62963f8a8c6b3ba4c377ac8/src/backend.js
 
-// TODO: this must be imported from the package
+// examples at the bottom
+
 import { graphql, rest } from "@blackpr/vue-workshop-app/server";
 
 const pokemonApi = graphql.link("https://graphql-pokemon2.vercel.app/");
@@ -326,3 +327,40 @@ const allUsers = {
     color: "#7DAD96",
   },
 };
+
+// example rest query
+// fetch('/pokemoney/pikachu')
+//     .then((res) => res.json())
+//     .then((result) => console.log(result));
+
+// example graphl query
+// fetch('https://graphql-pokemon2.vercel.app/', {
+//         method: 'POST',
+//         headers: {
+//             'content-type': 'application/json;charset=UTF-8',
+//         },
+//         body: JSON.stringify({
+//             query: `
+//               query PokemonInfo($name: String) {
+//                 pokemon(name: $name) {
+//                   id
+//                   number
+//                   name
+//                   image
+//                   attacks {
+//                     special {
+//                       name
+//                       type
+//                       damage
+//                     }
+//                   }
+//                 }
+//               }
+//             `,
+//             variables: {
+//                 name: 'picachui'
+//             },
+//         }),
+//     })
+//     .then((res) => res.json())
+//     .then((result) => console.log(result));
